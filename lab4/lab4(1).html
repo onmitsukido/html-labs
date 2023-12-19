@@ -1,0 +1,197 @@
+<!DOCTYPE html> <!--Страница со списком-->
+<html>
+  <head>
+    <title>Список социальных сетей</title>
+    <a href="lab2.html">Социальные сети</a><br>
+    <a href="lab2(1).html">Список социальных сетей</a><br>
+    <a href="gallery.html">Галерея</a>
+  </head>
+  <hr>
+  <body>
+    <details>
+      <summary>График</summary>
+        <p>
+          <table cellpadding="10" border="1">
+            <tr>
+              <th>
+                Социальная сеть
+              </th>
+              <th>
+                Оси графика
+              </th>
+            </tr>
+            <tr>
+              <td>
+              <form>
+                <input  type="checkbox" name="media" value="whatsapp"> WhatsApp <br>
+                <input  type="checkbox" name="media" value="vk"> ВКонтакте <br>
+                <input  type="checkbox" name="media" value="instagram"> Instagram <br>
+                <input  type="checkbox" name="media" value="facebook"> Facebook <br>
+                <input  type="checkbox" name="media" value="twitter"> Twitter <br>
+                <input  type="checkbox" name="media" value="twitter"> Не пользуюсь <br>
+              </form>
+              </td>
+              <td align="center">
+                <input  type="radio" name="xy" value="xy"> OX - возраст, OY - доля пользователей (%) <br>
+                <input  type="radio" name="xy" value="yx"> OX - доля пользователей (%), OY - возраст <br>
+              </td>
+            </tr>
+          </table>
+          <input type="button" value="Построить">
+        </p>
+    </details>
+    <details>
+      <summary>Фильтр</summary>
+        <p>
+          <form>
+            <label>Социальная сеть:
+              <input type="text" name="social-media" id="social-media">
+            </label><br><br>
+            <label>Возраст:
+              <input type="number" name="age" id="age">
+            </label><br><br>
+          </form>
+          <input type="button" value="Найти">
+        </p>
+    </details>
+    <details>
+      <summary>Сортировка</summary>
+        <p>
+          <select name="socials">
+            <option value="0"> WhatsApp	 </option>
+            <option value="1"> ВКонтакте	 </option>
+            <option value="2"> Instagram	 </option>
+            <option value="3"> Facebook	 </option>
+            <option value="4"> Twitter </option>
+            <option value="5"> Не пользуюсь </option>
+           </select>
+           <select name="percent">
+            <option value="0"> По возрастанию </option>
+            <option value="1"> По убыванию </option>
+           </select><br><br>
+           <input type="button" value="Сортировать">
+        </p>
+    </details>  
+    <table border="1">
+      <tr>
+        <th>
+          Социальная сеть
+        </th>
+        <th>
+          Население в целом (%)
+        </th>
+        <th>
+          18-30 лет (%)
+        </th>
+        <th>
+          31-45 лет (%)
+        </th>
+        <th>
+          старше 46 лет (%)
+        </th>
+      </tr>
+      <tr>
+        <td>
+          WhatsApp
+        </td>
+        <td align="center">
+          50
+        </td>
+        <td align="center">
+          73
+        </td>
+        <td align="center">
+          61
+        </td>
+        <td align="center">
+          72
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ВКонтакте
+        </td>
+        <td align="center">
+          38
+        </td>
+        <td align="center">
+          77
+        </td>
+        <td align="center">
+          53
+        </td>
+        <td align="center">
+          32
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Instagram
+        </td>
+        <td align="center">
+          28
+        </td>
+        <td align="center">
+          63
+        </td>
+        <td align="center">
+          36
+        </td>
+        <td align="center">
+          25
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Facebook
+        </td>
+        <td align="center">
+          14
+        </td>
+        <td align="center">
+          22
+        </td>
+        <td align="center">
+          18
+        </td>
+        <td align="center">
+          18
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Twitter
+        </td>
+        <td align="center">
+          6
+        </td>
+        <td align="center">
+          16
+        </td>
+        <td align="center">
+          8
+        </td>
+        <td align="center">
+          3
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Не пользуюсь
+        </td>
+        <td align="center">
+          31
+        </td>
+        <td align="center">
+          4
+        </td>
+        <td align="center">
+          14
+        </td>
+        <td align="center">
+          57
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
