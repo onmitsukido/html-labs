@@ -1,0 +1,135 @@
+mixin createGraphTable
+    table(cellpadding='10' border='1')
+        tbody
+            tr
+            th
+                | Социальная сеть
+            th
+                | Оси графика
+            tr
+            td
+                form
+                each val, key in graphItems
+                    input(type='checkbox' name='media' value=val)
+                    |#{key}
+                    br
+            td(align='center')
+                each val, key in graphItems2
+                    input(type='radio' name=key value=key)
+                    |#{val}
+                    br
+
+mixin createSort
+    select(name='socials')
+      - var i = 0;
+      each item in sortList1
+        option(value='i') #{item}
+        - i++
+    select(name='percent')
+      - var i = 0;
+      each item in sortList2
+        option(value='i') #{item}
+        - i++
+
+block variables
+    - var graphItems = {'Whatsapp' : 'whatsapp', 'ВКонтакте' : 'vk', 'Instagram' : 'instagram', 'Facebook' : 'facebook', 'Twitter' : 'twitter', 'Не пользуюсь' : 'nope'}
+    - var graphItems2 = {'xy' : 'OX - возраст, OY - доля пользователей (%)', 'yx' : 'OX - доля пользователей (%), OY - возраст'}
+    - var sortList1 = ['WhatsApp', 'ВКонтакте', 'Instagram', 'Facebook', 'Twitter', 'Не пользуюсь']
+    - var sortList2 = ['По возрастанию', 'По убыванию']
+    - var thList = ['Социальная сеть', 'Население в целом (%)', '18-30 лет (%)', '31-45 лет (%)', 'старше 46 лет (%)']
+    -
+        var tableRows = [
+            {'first' : 'WhatsApp',
+            'second' : '50',
+            'third' : '73',
+            'fourth' : '61',
+            'fifth' : '72'
+            },
+            {'first' : 'ВКонтакте',
+            'second' : '38',
+            'third' : '77',
+            'fourth' : '53',
+            'fifth' : '32'
+            },
+            {'first' : 'Instagram',
+            'second' : '28',
+            'third' : '63',
+            'fourth' : '36',
+            'fifth' : '25'
+            },
+            {'first' : 'Facebook',
+            'second' : '14',
+            'third' : '22',
+            'fourth' : '18',
+            'fifth' : '18'
+            },
+            {'first' : 'Twitter',
+            'second' : '6',
+            'third' : '16',
+            'fourth' : '8',
+            'fifth' : '3'
+            },
+            {'first' : 'Не пользуюсь',
+            'second' : '31',
+            'third' : '4',
+            'fourth' : '14',
+            'fifth' : '57'
+            }
+        ]
+
+include struct/header.pug
+
+.graph
+    details
+        summary График
+        p
+            +createGraphTable
+            input(type='button' value='Построить')
+
+.filter
+    details
+        summary Фильтр
+        p
+        form
+            label
+            | Социальная сеть:
+            input#social-media(type='text' name='social-media')
+            br
+            br
+            label
+            | Возраст:
+            input#age(type='number' name='age')
+            br
+            br
+        input(type='button' value='Найти')
+        p
+
+.sort
+    details
+        summary Сортировка
+        p
+            +createSort
+            br
+            br
+            input(type='button' value='Сортировать')
+
+.mytable
+    table(border='1')
+        tr
+            each item in thList
+                th
+                    |#{item}
+        each item in tableRows
+            tr
+                td(align='center')
+                    |#{item.first}
+                td(align='center')
+                    |#{item.second}
+                td(align='center')
+                    |#{item.third}
+                td(align='center')
+                    |#{item.fourth}
+                td(align='center')
+                    |#{item.fifth}
+
+include struct/footer.pug

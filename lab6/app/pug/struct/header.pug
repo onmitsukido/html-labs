@@ -1,0 +1,23 @@
+block variables
+	- var title = 'Информация о соц.сетях'
+
+	- var menuItems = {'Социальные сети' : 'index', 'Список социальных сетей' : 'list', 'Галерея' : 'gallery'}
+
+header
+	link(rel='stylesheet' href='css/main.css')
+	title #{title}
+	.head-flex
+		.head-flex-item
+			input(type='text')
+		.head-flex-item
+			button
+				img(src='img/search.png')
+	.title-grid
+		.title-grid__title0
+			b #{title}
+		.title-grid__menu-flex
+			//#current.menu-flex__menu-item
+				a(href='lab4.html' title='Социальные сети') Социальные сети
+			each value, key in menuItems
+				.menu-flex__menu-item
+					a(href= value + ".html" title= key)= key

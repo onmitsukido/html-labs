@@ -1,0 +1,146 @@
+
+<header>
+  <link rel="stylesheet" href="css/main.css"/>
+  <title>Информация о соц.сетях</title>
+  <div class="head-flex">
+    <div class="head-flex-item">
+      <input type="text"/>
+    </div>
+    <div class="head-flex-item">
+      <button><img src="img/search.png"/></button>
+    </div>
+  </div>
+  <div class="title-grid">
+    <div class="title-grid__title0"><b>Информация о соц.сетях</b></div>
+    <div class="title-grid__menu-flex">
+      <!--#current.menu-flex__menu-itema(href='lab4.html' title='Социальные сети') Социальные сети
+      -->
+      <div class="menu-flex__menu-item"><a href="index.html" title="Социальные сети">Социальные сети</a></div>
+      <div class="menu-flex__menu-item"><a href="list.html" title="Список социальных сетей">Список социальных сетей</a></div>
+      <div class="menu-flex__menu-item"><a href="gallery.html" title="Галерея">Галерея</a></div>
+    </div>
+  </div>
+</header>
+<div class="graph">
+  <details>
+    <summary>График</summary>
+    <p>
+      <table cellpadding="10" border="1">
+        <tbody>
+          <tr></tr>
+          <th>Социальная сеть</th>
+          <th>Оси графика</th>
+          <tr></tr>
+          <td>
+            <form></form>
+            <input type="checkbox" name="media" value="whatsapp"/>Whatsapp<br/>
+            <input type="checkbox" name="media" value="vk"/>ВКонтакте<br/>
+            <input type="checkbox" name="media" value="instagram"/>Instagram<br/>
+            <input type="checkbox" name="media" value="facebook"/>Facebook<br/>
+            <input type="checkbox" name="media" value="twitter"/>Twitter<br/>
+            <input type="checkbox" name="media" value="nope"/>Не пользуюсь<br/>
+          </td>
+          <td align="center">
+            <input type="radio" name="xy" value="xy"/>OX - возраст, OY - доля пользователей (%)<br/>
+            <input type="radio" name="yx" value="yx"/>OX - доля пользователей (%), OY - возраст<br/>
+          </td>
+        </tbody>
+      </table>
+      <input type="button" value="Построить"/>
+    </p>
+  </details>
+</div>
+<div class="filter">
+  <details>
+    <summary>Фильтр</summary>
+    <p></p>
+    <form>
+      <label></label>Социальная сеть:
+      <input id="social-media" type="text" name="social-media"/><br/><br/>
+      <label></label>Возраст:
+      <input id="age" type="number" name="age"/><br/><br/>
+    </form>
+    <input type="button" value="Найти"/>
+    <p></p>
+  </details>
+</div>
+<div class="sort">
+  <details>
+    <summary>Сортировка</summary>
+    <p>
+      <select name="socials">
+        <option value="i">WhatsApp</option>
+        <option value="i">ВКонтакте</option>
+        <option value="i">Instagram</option>
+        <option value="i">Facebook</option>
+        <option value="i">Twitter</option>
+        <option value="i">Не пользуюсь</option>
+      </select>
+      <select name="percent">
+        <option value="i">По возрастанию</option>
+        <option value="i">По убыванию</option>
+      </select><br/><br/>
+      <input type="button" value="Сортировать"/>
+    </p>
+  </details>
+</div>
+<div class="mytable">
+  <table border="1">
+    <tr>
+      <th>Социальная сеть</th>
+      <th>Население в целом (%)</th>
+      <th>18-30 лет (%)</th>
+      <th>31-45 лет (%)</th>
+      <th>старше 46 лет (%)</th>
+    </tr>
+    <tr>
+      <td align="center">WhatsApp</td>
+      <td align="center">50</td>
+      <td align="center">73</td>
+      <td align="center">61</td>
+      <td align="center">72</td>
+    </tr>
+    <tr>
+      <td align="center">ВКонтакте</td>
+      <td align="center">38</td>
+      <td align="center">77</td>
+      <td align="center">53</td>
+      <td align="center">32</td>
+    </tr>
+    <tr>
+      <td align="center">Instagram</td>
+      <td align="center">28</td>
+      <td align="center">63</td>
+      <td align="center">36</td>
+      <td align="center">25</td>
+    </tr>
+    <tr>
+      <td align="center">Facebook</td>
+      <td align="center">14</td>
+      <td align="center">22</td>
+      <td align="center">18</td>
+      <td align="center">18</td>
+    </tr>
+    <tr>
+      <td align="center">Twitter</td>
+      <td align="center">6</td>
+      <td align="center">16</td>
+      <td align="center">8</td>
+      <td align="center">3</td>
+    </tr>
+    <tr>
+      <td align="center">Не пользуюсь</td>
+      <td align="center">31</td>
+      <td align="center">4</td>
+      <td align="center">14</td>
+      <td align="center">57</td>
+    </tr>
+  </table>
+</div>
+<footer>
+  <div class="content">
+    <div class="left">© Попов А.Д., Б9121-09.03.04(2), 2023-2024</div>
+    <div class="center"></div>
+    <div class="right">✉ popov.ade@dvfu.ru</div>
+  </div>
+</footer>

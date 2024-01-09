@@ -1,0 +1,47 @@
+mixin createGallery(listlist)
+	each item in listlist
+		div(class=item.class)
+			a(href=item.link title=item.title)
+				img(src=item.img)
+
+block variables
+	-
+		var itemsSections = [
+			{'class' : 'gallery-grid__item-1',
+			'img' : 'img/vk.jpg',
+			'link' : 'vk.html',
+			'title' : 'ВКонтакте'
+			},
+			{'class' : 'gallery-grid__item-2',
+			'img' : 'img/viber.jpg',
+			'link' : 'viber.html',
+			'title' : 'Viber'
+			},
+			{'class' : 'gallery-grid__item-3',
+			'img' : 'img/twitter.jpg',
+			'link' : 'twitter.html',
+			'title' : 'Twitter'
+			},
+			{'class' : 'gallery-grid__item-4',
+			'img' : 'img/tumblr.jpg',
+			'link' : 'tumblr.html',
+			'title' : 'Tumblr'
+			},
+			{'class' : 'gallery-grid__item-5',
+			'img' : 'img/instagram.jpg',
+			'link' : 'instagram.html',
+			'title' : 'Instagram'
+			},
+			{'class' : 'gallery-grid__item-6',
+			'img' : 'img/facebook.jpg',
+			'link' : 'facebook.html',
+			'title' : 'Facebook'
+			}
+		]
+
+include struct/header.pug
+
+.gallery-grid
+	+createGallery(itemsSections)
+
+include struct/footer.pug

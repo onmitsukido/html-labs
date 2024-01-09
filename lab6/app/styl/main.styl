@@ -1,0 +1,314 @@
+main-color = #0F1035
+sec-color = #365486
+link-color = #7FC7D9
+active-color = #0F1035
+bg-color = #C5DFF8
+bordercolor1 = black
+bordercolor2 = #365486
+activeblockcolor = #7FC7D9
+
+body
+	margin 0
+	font-size 1.2em
+	background-color bg-color
+	min-height 100vh
+	display flex
+	flex-direction column
+
+create-grid(cols, rows, size)
+	grid-template-columns repeat(cols, size)
+	grid-template-rows repeat(rows, size)
+
+footer
+	margin-top auto
+
+
+.head-flex
+	display flex
+	background-color main-color
+	justify-content end
+	border solid thin bordercolor1
+	input
+		width 40vw
+		height 3.7vh
+	img
+		width 100%
+		height 100%
+	button
+		width 2.5vw
+		height 4vh
+		background-color sec-color
+	&:hover
+			background-color sec-color
+
+.head-flex-item
+	padding 1vh 0
+
+.title-grid
+	display grid
+	background-image url('/img/sky.png')
+	background-size 100%
+	border solid thin bordercolor1
+	grid-template-columns 100%
+	grid-template-rows 20vh 7vh
+	&:hover
+		outline solid 0.1vw bordercolor2
+	&__title0
+		grid-column 1 / 2
+		grid-row 1 / 2
+		text-align center
+		margin-top 2.5vh
+	&__menu-flex
+		grid-column 1 / 2
+		grid-row 2 / 3
+	a
+		text-decoration none
+		color black
+		&:hover
+			color link-color
+		&:active
+			color active-color
+
+.title-grid__menu-flex
+	display flex
+	justify-content end
+	height 15vh
+
+.menu-flex__menu-item
+	padding-top 10px
+	padding-left 10px
+	padding-right 30px
+	padding-bottom 30px
+
+#current
+	background-color rgba(0, 0, 0, 0.1)
+
+.content
+	display flex
+	padding 15px
+	background-color main-color
+	border solid thin bordercolor1
+	color white
+	&:hover
+			background-color sec-color
+
+.center
+	width 55%
+
+.images-grid
+	display grid
+	create-grid(2, 0, 1fr)
+	margin 3% 5%
+	text-align justify
+	img
+		height 200px
+		&:hover
+			outline solid 3px sec-color
+	&__item1-2
+		grid-column 1 / 3
+		grid-row 1 / 2
+	&__item-3
+		grid-column 1 / 2
+		grid-row 2 / 3
+		padding 10px
+		margin 10px
+		&:hover
+			background-color activeblockcolor
+	&__item-4
+		grid-column 2 / 3
+		grid-row 2 / 3
+		padding 10px
+		margin 10px
+		&:hover
+			background-color activeblockcolor
+	&__item-5
+		grid-column 1 / 2
+		grid-row 3 / 4
+		padding 10px
+		margin 10px
+		&:hover
+			background-color activeblockcolor
+	&__item-6
+		grid-column 2 / 3
+		grid-row 3 / 4
+		padding 10px
+		margin 10px
+		&:hover
+			background-color activeblockcolor
+
+.images-grid__item1-2
+	display flex
+	& > div
+		border solid thin bordercolor1
+		padding 10px
+		&:hover
+			background-color activeblockcolor
+	img
+		width 100%
+		height 50vh
+
+#left
+	width 70%
+
+#right
+	width 30%
+	margin-left 30px
+
+.zag
+	text-align center
+
+.item-flex
+	display flex
+	justify-content left
+	align-items center
+	img
+		width 300px
+
+.gallery-grid
+	display grid
+	create-grid(3, 0, 1fr)
+	justify-items center
+	align-items center
+	padding 50px
+	gap 50px
+	img
+		width 20vw
+		height 20vw
+		&:hover
+			outline solid 3px sec-color
+
+.sc-title
+	display block
+	font-weight bold
+	text-align center
+	margin 50px
+	font-size 2em
+	&:hover
+		color main-color
+		text-decoration underline
+
+.sc-p
+	display block
+	text-align justify
+	margin 50px
+	font-size 1.5em
+	padding 10px
+	&:hover
+		color main-color
+		outline solid thin black
+
+.graph
+	display block
+	margin-top 5vh
+	& summary
+		&:hover
+			color red
+			outline solid thin black
+
+.filter
+	display block
+	margin-top 5vh
+	& summary
+		&:hover
+			color green
+			outline solid thin black
+
+.sort
+	display block
+	margin-top 5vh
+	& summary
+		&:hover
+			color purple
+			outline solid thin black
+
+.mytable
+	display block
+	margin 5vh 0
+	& th
+		&:hover
+			background-color black
+			color gold
+			text-decoration underline
+	& td
+		&:hover
+			background-color black
+			color gold
+			text-decoration underline
+
+@media (max-width: 1000px)
+	.title-grid
+		display grid
+		create-grid(2, 2, 1fr)
+		background-image url()
+		border solid thin bg-color
+		&:hover
+			outline solid 2px bg-color
+		&__title0
+			grid-column 1 / 3
+			grid-row 1 / 2
+		text-align center
+		&__menu-flex
+			grid-column 1 / 3
+			grid-row 2 / 3
+	.title-grid__menu-flex
+		display grid
+		create-grid(1, 0, 1fr)
+		justify-items center
+	.images-grid
+		display grid
+		create-grid(1, 0, 1fr)
+		text-align justify
+		margin-top 100px
+		&__item1-2
+			grid-column 1 / 2
+			grid-row 1 / 3
+		&__item-3
+			grid-column 1 / 2
+			grid-row 3 / 4
+			padding 10px
+		&__item-4
+			grid-column 1 / 2
+			grid-row 4 / 5
+			padding 10px
+		&__item-5
+			grid-column 1 / 2
+			grid-row 5 / 6
+			padding 10px
+		&__item-6
+			grid-column 1 / 2
+			grid-row 6 / 7
+			padding 10px
+	.images-grid__item1-2
+		display grid
+		create-grid(1, 2, 1fr)
+		grid-row-gap 10px
+	#left
+		width 100%
+	#right
+		width 100%
+		margin-left 0
+	.gallery-grid
+		margin-top: 15vh
+		create-grid(1, 0, 1fr)
+		padding 50px
+		gap 50px
+		img
+			width 50vw
+			height 50vw
+	.sc-title
+		margin-top 25vh
+	.sc-p
+		text-align center
+	.graph
+		margin-top 25vh
+		margin-left auto
+		margin-right auto
+	.filter
+		margin 0 auto
+	.sort
+		margin 0 auto
+	.mytable
+		margin-top 5vh
+		margin-left auto
+		margin-right auto
+		margin-bottom 10vh
